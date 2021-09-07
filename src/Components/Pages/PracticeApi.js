@@ -4,22 +4,25 @@ import { useEffect } from 'react/cjs/react.development'
 
 const PracticeApi = () => {
 
-    const [data, setdata] = useState([]);
+    const [news, setNews] = useState();
 
 
     useEffect(()=>{
         apicall();
-    }, [0]);
+    }, []);
+    
+
+   
 
     const apicall = async()=>{
 
-        const resolve = await axios.get("https://api.covid19india.org/state_district_wise.json");
+        const resolve = await axios.get("https://newsapi.org/v2/everything?q=Apple&from=2021-09-01&sortBy=popularity&apiKey=ca5366c5ddb84bb482fc26b7261fdc8b");
 
-        const final = await (resolve.data)
+        const final = await (resolve.data);
 
-        setdata(final);
+        setNews(final)
 
-        console.log(data)
+        console.log(news.source)
         
 
     }
@@ -43,13 +46,12 @@ const PracticeApi = () => {
        
 
 <tbody>
-                    {/* {data.map((elm, i, key) => {
-                        return <tr>
+                    {/* {data.map((elm, i, key) =>  <tr>
                             
                             <td>{elm}</td>
                         </tr>
                         
-                    })} */}
+                    )} */}
 
                 </tbody>
 
@@ -59,5 +61,6 @@ const PracticeApi = () => {
         </div>
     )
 }
+
 
 export default PracticeApi

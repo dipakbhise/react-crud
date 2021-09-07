@@ -15,7 +15,7 @@ const Header = () => {
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <NavLink exact  className="nav-link" aria-current="page" to="/" >Home</NavLink>
+          <NavLink exact  className="nav-link" aria-current="page" to="/react-crud" >Home</NavLink>
         </li>
         <li className="nav-item">
           <NavLink exact className="nav-link" to="/about" >About</NavLink>
